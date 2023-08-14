@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Nunito";
+}
+
+body {
+    background-color: #f1f5f9;
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+@font-face {
+    font-family: "Nunito";
+    src: url(Resources/Roboto-Regular.ttf);
+}
+
+/* Header */
+
+.header {
+    background-color: white;
+}
+
+/* Main Content */
+
+.main-content {
+    
+}
+
+/* Sidebar */
+
+.sidebar {
+    height: 100vh;
+    background-color: #222229;
+    color: #f8fafc;
+    padding: 20px;
+}
+
+.logo {
+    display: grid;
+    grid-auto-flow: column;
+    place-items: center;
+    place-content: center;
+    cursor: pointer;
+    margin-bottom: 50px;
+    gap: 20px;
+}
+
+.logo img {
+    height: 3rem;
+    filter: invert(1);
+}
+
+ul > li {
+    list-style: none;
+    display: grid;
+    grid-auto-flow: column;
+    font-size: 20px;
+    gap: 20px;
+    place-items: center;
+    place-content: start;
+    cursor: pointer;
+    margin: 10px 0px;
+}
+
+ul > li:hover {
+    text-decoration: underline;
+    background-color: #131B23;
+}
+
+ul > li img {
+    height: 2rem;
+    filter: invert(1);
+}
+
+.links-second {
+    margin-top: 50px;
+}
+
+@media only screen and (max-height: 500px) {
+    .sidebar {
+        height: 100%;
+    }
+}
