@@ -10,8 +10,7 @@ html {
 
 body {
     background-color: #f1f5f9;
-    display: grid;
-    grid-template-columns: auto 1fr;
+    height: 100vh;
 }
 
 @font-face {
@@ -19,16 +18,132 @@ body {
     src: url(Resources/Roboto-Regular.ttf);
 }
 
+.dashboard {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+    'sidebar header'
+    'sidebar content';
+}
+
 /* Header */
 
 .header {
     background-color: white;
+    grid-area: header;
+    padding: 2rem 5rem;
+    box-shadow: 0 5px 2px #bac5d2;
+}
+
+.top {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    margin-bottom: 2.5rem;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+#search {
+    background-color: #eaecef;
+    outline-color: #6b778b;
+    border: 0;
+    border-radius: 1.2rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    width: 35rem;
+}
+
+.search img {
+    height: 2rem;
+    cursor: pointer;
+}
+
+.bell {
+    height: 2rem;
+    cursor: pointer;
+}
+
+.account {
+    margin-right: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.account h1 {
+    display: inline-block;
+}
+
+.profile {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    background: url(Resources/Profile.jpg) center / cover no-repeat;
+    cursor: pointer;
+    margin: 0 3rem;
+}
+
+.profile-big {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    background: url(Resources/Profile.jpg) center / cover no-repeat;
+    display: inline-block;
+}
+
+.profile-greeting {
+    display: inline-block;
+    margin-left: 2rem;
+}
+
+.greeting {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.name {
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+.bottom {
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-right: 3rem;
+    gap: 2rem;
+}
+
+.btn {
+    background-color: #5465FF;
+    color: white;
+    font-weight: bold;
+    border: 0;
+    width: 6rem;
+    height: 3rem;
+    font-size: 1.1rem;
+    border-radius: 5rem;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background-color: #788BFF;
+    cursor: pointer;
 }
 
 /* Main Content */
 
 .main-content {
-    
+    grid-area: content;
+    padding: 2rem;
 }
 
 /* Sidebar */
@@ -38,6 +153,7 @@ body {
     background-color: #222229;
     color: #f8fafc;
     padding: 20px;
+    grid-area: sidebar;
 }
 
 .logo {
@@ -65,11 +181,12 @@ ul > li {
     place-content: start;
     cursor: pointer;
     margin: 10px 0px;
+    transition: 0.05s;
 }
 
 ul > li:hover {
     text-decoration: underline;
-    background-color: #131B23;
+    background-color: #10171e;
 }
 
 ul > li img {
