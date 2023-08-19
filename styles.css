@@ -6,11 +6,13 @@
 
 html {
     font-family: "Nunito";
+    --black: #222229;
+    --black2: #10171e;
 }
 
 body {
-    background-color: #f1f5f9;
     height: 100vh;
+    background-color: #f1f5f9;
 }
 
 @font-face {
@@ -33,7 +35,7 @@ body {
     background-color: white;
     grid-area: header;
     padding: 2rem 5rem;
-    box-shadow: 0 5px 2px #bac5d2;
+    box-shadow: 0 5px 10px #cfd6de;
 }
 
 .top {
@@ -86,6 +88,11 @@ body {
     margin: 0 3rem;
 }
 
+.account-big {
+    display: flex;
+    align-items: center;
+}
+
 .profile-big {
     height: 6rem;
     width: 6rem;
@@ -123,7 +130,7 @@ body {
 }
 
 .btn {
-    background-color: #5465FF;
+    background-color: var(--black);
     color: white;
     font-weight: bold;
     border: 0;
@@ -135,7 +142,7 @@ body {
 }
 
 .btn:hover {
-    background-color: #788BFF;
+    background-color: var(--black2);
     cursor: pointer;
 }
 
@@ -144,16 +151,113 @@ body {
 .main-content {
     grid-area: content;
     padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+    'projects announcements'
+    'projects trending';
+}
+
+.projects {
+    display: grid;
+    grid-area: projects;
+}
+
+.main-content h3 {
+    margin-bottom: 1.2rem;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding-bottom: 2.5rem;
+}
+
+.projects .card {
+    border-left: 10px solid var(--black);
+}
+
+.projects .card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 10px #cfd6de;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 30px;
+    gap: 20px;
+}
+
+.card .actions img {
+    height: 2rem;
+    cursor: pointer;
+}
+
+.announcements {
+    grid-area: announcements;
+    width: 300px;
+    margin: 0 2rem;
+}
+
+.card {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 10px #cfd6de;
+}
+
+.announcement {
+    padding: 1rem 0;
+}
+
+.announcement + .announcement {
+    border-top: #d2d5d8 2px solid;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.trending {
+    grid-area: trending;
+    width: 300px;
+    margin: 0 2rem;
+}
+
+.picture {
+    background: url(Resources/Profile.jpg) center / cover no-repeat;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.trend .account {
+    display: inline-block;
+}
+
+.trend .account .username {
+    font-weight: bold;
+}
+
+.trend + .trend {
+    margin-top: 2rem;
 }
 
 /* Sidebar */
 
 .sidebar {
     height: 100vh;
-    background-color: #222229;
-    color: #f8fafc;
+    background-color: var(--black);
+    color: white;
     padding: 20px;
     grid-area: sidebar;
+    position: sticky;
+    top: 0;
 }
 
 .logo {
@@ -171,7 +275,7 @@ body {
     filter: invert(1);
 }
 
-ul > li {
+.sidebar ul > li {
     list-style: none;
     display: grid;
     grid-auto-flow: column;
@@ -184,22 +288,16 @@ ul > li {
     transition: 0.05s;
 }
 
-ul > li:hover {
+.sidebar ul > li:hover {
     text-decoration: underline;
-    background-color: #10171e;
+    background-color: var(--black2);
 }
 
-ul > li img {
+.sidebar ul > li img {
     height: 2rem;
     filter: invert(1);
 }
 
 .links-second {
     margin-top: 50px;
-}
-
-@media only screen and (max-height: 500px) {
-    .sidebar {
-        height: 100%;
-    }
 }
