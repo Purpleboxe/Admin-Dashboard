@@ -1,6 +1,6 @@
 # Admin-Dashboard
 
-Admin Dashboard made with HTML and CSS for the Odin Project.
+Admin Dashboard made with HTML and CSS for The Odin Project.
 You can have a look at it here! https://purpleboxe.github.io/Admin-Dashboard/
 
 # Final Product
